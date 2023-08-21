@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+SetEnv HTTP_MOD_REWRITE On
+RewriteEngine On
+RewriteBase /
+</IfModule> # DO NOT REMOVE. CLOUDLINUX PASSENGER  CONFIGURATION BEGIN
+PassengerAppRoot "/home/edemssxd/GreatKartProject"
+PassengerBaseURI "/"
+PassengerPython "/home/edemssxd/virtualenv/GreatKartProject/3.7/bin/python"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+

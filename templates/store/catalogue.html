@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+    <div class="page-content mb-10 pb-2">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-12">
+                    <center>
+                        <img src="{% static 'riode/images/catalogue.jpg' %}"/>
+                    </center>
+                </div>
+
+                <div class="col-md-3 col-sm-12">
+                    <center>
+                        <button type="button" class="btn btn-primary" style="font-size: 1.5rem;"> <a style="color: #fff; " href="https://secusigne.net/static/riode/images/catalogue.pdf">TELECHARGER LE CATALOGUE</a></button>
+                        
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

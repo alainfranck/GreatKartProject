@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="main">
+    <div class="page-content with-sidebar">
+        <div class="container">
+            <div class="row gutter-lg">
+                <div class="col-lg-9">
+                    <article class="post-single">
+                        <figure class="post-media">
+                            <a href="#">
+                                <!--<img src="/media/{{blog_obj.image}}" width="880" height="450" alt="post" />-->
+                            </a>
+                        </figure>
+                        <div class="post-details">
+                            <h4 class="post-title"><a href="#">{{blog_obj.titre}}</a></h4>
+                            <div class="post-body mb-7">
+                                <p class="mb-5">{{blog_obj.description|safe}}</p>
+                        </div>
+                    </article>
+                </div>
+                {% include 'includes/sidebar.html' %}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

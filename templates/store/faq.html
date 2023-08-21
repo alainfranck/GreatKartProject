@@ -1,0 +1,449 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+            <nav class="breadcrumb-nav">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li><a href="demo1.html"><i class="d-icon-home"></i></a></li>
+                        <li>FAQs</li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="page-header" style="background-image: url({% static 'riode/images/faq/faq.jpg' %})">
+                <h1 class="page-title font-weight-bold text-capitalize lh-1" style="color: #000">Guide d'achats</h1>
+            </div>
+            <div class="page-content mb-10 pb-8">
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 mt-10">
+                                <h2 class="title pl-2 pr-2 ls-m text-left">LES EXTINCTEURS POURQUOI ? COMMENT CHOISIR ET UTILISER ?</h2>
+                                <div class="accordion accordion-border accordion-boxed accordion-plus">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-1" class="collapse">QU’EST-CE QU’UN EXTINCTEUR ?</a>
+                                        </div>
+                                        <div id="collapse2-1" class="expanded">
+                                            <div class="card-body">
+                                                <img src="{% static 'riode/images/faq/ext.png' %}">
+                                                <p style="text-align: justify">Un extincteur est un appareil contenant un produit capable d’éteindre un feu. 
+                                                C’est un moyen de première intervention, que l’on utilise en premier pour attaquer 
+                                                un début d’incendie. En effet la lutte contre l’incendie est une course contre le
+                                                temps et l’efficacité des extincteurs contre les débuts d’incendie n’est plus à 
+                                                démontrer. Après il est trop tard.</p>
+                                                <p style="text-align: justify">Toutefois une mauvaise implantation des extincteurs dans votre bâtiment ou un
+                                                mauvais choix du type d’extincteur peut conduire au pire, d’où la nécessité 
+                                                de bien s’informer.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-2" class="expand">COMMENT CHOISIR SON EXTINCTEUR</a>
+                                        </div>
+                                        <div id="collapse2-2" class="collapsed">
+                                            <div class="card-body">
+                                                <p style="text-align: justify">Le choix d’un extincteur se fait en fonction du type de feu à éteindre. On distingue de 
+                                                façon générale 5 classes de feu.</p>
+                                                <img src="{% static 'riode/images/faq/choix.png' %}">
+                                                <p>Il est plus courant de trouver sur le marché 3 types d’extincteurs portatifs, fonction du type de feux à éteindre.
+                                                Les extincteurs à eau avec additif de 6 ou 9 litres, les extincteurs à poudre de 1 ou 2 kilogramme, ou de 6 et 9 kilogrammes, 
+                                                et enfin on trouve les extincteurs à C O 2 de 2 et 5 kilogramme.
+                                                Les extincteurs portatifs doivent être conformes à la norme NF-EN3 et posséder un marquage CE.
+                                                </p>
+                                                <p><b>L’extincteur à poudre</b></p>
+                                                <p style="text-align: justify">Les extincteurs à poudre (généralement de la poudre pour feu ABC) permettent d’éteindre tout type de feu, sauf les feux de métaux. 
+                                                Cependant ils sont plus adaptés pour un usage extérieur. En effet, la poudre est très volatile et forme un nuage opaque qui peut gêner 
+                                                l’évacuation des personnes, en plus elle est salissante et peut corroder facilement 
+                                                le matériel électrique. Les extincteurs à poudre sont plus adaptés pour des parkings, des stations-services, des stockages en plein air. 
+                                                Ils sont très souvent identifiables par un code couleur jaune. </p>
+                                                <p><b>L’extincteur à eau pulvérisée avec additif</b></p>
+                                                <p>Les extincteurs à eau pulvérisée avec additif permettent d’éteindre des feux de classes A et B c’est-à-dire des feux de solides braisant,
+                                                bois, carton, tissu et des feux d’hydrocarbure, grâce à l’additif ajouté dans l’eau. L’extincteur à eau peut éventuellement être utilisé
+                                                sur des installations électriques de tension inférieure à 1000 volt, mais attention au risque d’électrocution et de dégâts du matériel.</p>
+                                                <p><b>L’extincteur à CO2</b></p>
+                                                <p style="text-align: justify">Les extincteurs à dioxyde de carbone C O 2 permettent d’éteindre des feux de classe B c’est-à-dire des feux 
+                                                de liquides inflammables, hydrocarbure, essence, fioul, solvant, peinture. Ils sont surtout utilisés pour éteindre des feux d’origines 
+                                                électriques et l’on parle d’extinction propre car il n’altère pas les équipements électriques. Le CO 2 est un gaz donc n’est efficace qu’en zone fermée</p>
+                                                <p style="text-align: justify">Les extincteurs portatifs peuvent être à pression permanente ou à pression auxiliaire.Dans le premier cas, l'extincteur est constamment sous pression
+                                                donc prêt à être utilisé. Il est identifiable par la présence d'un manomètre qui permet de vérifier que la pression à l'intérieur de la cuve est correcte 
+                                                pour une bonne utilisation (l'aiguille doit pointer dans la zone verte). Ils sont moins onéreux mais un risque de perte de pression existe.</p>
+                                                <p style="text-align: justify">Les extincteurs à pression auxiliaire, eux, ne sont pas sous pression. Ils possèdent à l'intérieur de la cuve une capsule de gaz (sparklet)
+                                                qu'il faut percuter pour mettre l'agent extincteur sous pression et permettre ainsi son expulsion. Ils sont plus chers à l'achat mais peuvent
+                                                être ouverts sur place lors de la maintenance, contrairement aux extincteurs à pression permanente.</p>
+                                                <p><b>COMMENT DETERMINER LE NOMBRE  D’EXTINCTEUR QU’IL VOUS FAUT</b></p>
+                                                <p>Il est courant d’utiliser la règle édictée par les assureurs c’est-à-dire la règle APSAD R4. Pour faire simple, cette règle vous impose ce qui suit :</p>
+                                                •	La dotation en extincteur se détermine niveau par niveau (sous-sol, rez-de-chaussée, étage)
+                                                <br>•	La protection générale définit 1 appareil pour 200m2 et un individu ne doit pas parcourir plus de 15m pour atteindre un extincteur
+                                                <br>•	Il faut ajouter en plus une protection complémentaire pour des dangers localisés à l’intérieur du bâtiment (imprimante et photocopieur, groupe électrogène, machine…)
+                                                <br>•	Enfin il faut protéger les installations particulières, hors bâtiment telle que les stockages extérieur de liquide ou gaz inflammable, les stations de carburant, les salles électriques, les chambres froides etc
+                                                <br>•	Les extincteurs 9l ou 9kg sont recommandés pour des activités à caractère industrielle (transformation, production)
+                                                <br>•	Chaque établissement doit avoir au minimum 2 extincteurs
+                                                <br>•	Ils doivent être accrochés à un élément fixe, avec un panneau signalétique. La poignée de portage doit être placée à plus de 1,20 m du sol
+                                                <img src="{% static 'riode/images/faq/protec.png' %}">
+                                                <p><b>COMMENT ENTRETENIR SON EXTINCTEUR</b></p>
+                                                <p style="text-align: justify">Un extincteur doit faire l’objet d’une vérification annuelle par un technicien habilité. Toutefois en fonction de la nature de l’activité et
+                                                de l’environnement du site, les assureurs pourraient recommander un entretien tous les 6 mois. En cas d’utilisation de l’extincteur, faite appel 
+                                                à votre fournisseur pour le rechargement. </p>
+                                                <p><b>QUEL EST LE PRIX D’UN EXTINCTEUR</b></p>
+                                                <p style="text-align: justify">Les prix sont fonction du type d’extincteur, de la capacité en litre ou kg, de la nature (pression permanente ou pression auxiliaire).
+                                                Consultez notre site internet pour plus de précision</p>
+                                                
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-10">
+                                <h2 class="title pl-2 pr-2 ls-m">SIGNALETIQUE ET AFFICHAGE DE SECURITE AU TRAVAIL</h2>
+                                <div class="accordion accordion-border accordion-boxed accordion-plus">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-1" class="collapse">POURQUOI METTRE EN PLACE UNE SIGNALETIQUE DE SANTE ET SECURITE AU TRAVAIL ?</a>
+                                        </div>
+                                        <div id="collapse2-1" class="expanded">
+                                            <div class="card-body">
+                                                <img src="{% static 'riode/images/faq/sign.png' %}">
+                                                <p style="text-align: justify">La signalétique permet une communication efficace avec un individu. Elle vous permet d’informer les travailleurs et
+                                                visiteurs sur les dangers présents sur le site, de rappeler une consigne qui n’est plus respectée, de faire acquérir à
+                                                votre personnel un comportement nouveau, ou de développer l’esprit de prévention et de sécurité. Une signalisation de
+                                                sécurité s’impose toutes les fois que sur le lieu de travail, un risque ne peut pas être évité ou prévenu par l’existence de 
+                                                protection collective ou par l’organisation du travail. Il existe par ailleurs une obligation de mettre une signalisation pour
+                                                l’évacuation, le sauvetageet les secours, le matériel de lutte contre l’incendie, les produits dangereux etc</p>
+                                                <p><b>Obligation réglementaire</b></p>
+                                                <p style="text-align: justify">L’employeur est tenu par des obligations réglementaires en matière de sécurité et santé au travail. Le code du travail 
+                                                stipule que pour protéger la vie et la santé des salariés, l'employeur est tenu de prendre toutes les mesures utiles qui sont adaptées aux conditions 
+                                                d'exploitation de l'entreprise. Il doit notamment aménager les installations et régler la marche du travail de manière à préserver le mieux possible 
+                                                les salariés des accidents et maladies. La signalétique est un moyen efficace de réponse à cette obligation. Ainsi la loi oblige l'employeur ou son 
+                                                représentant à organiser le contrôle permanent du respect des règles d'hygiène et de sécurité.</p>
+                                                <p><b>Pictogramme d’interdiction</b></p>
+                                                <img src="{% static 'riode/images/faq/picto.png' %}">
+                                                <p><b>Pictogramme obligation</b></p>
+                                                <img src="{% static 'riode/images/faq/obli.png' %}">
+                                                <p><b>Pictogramme de danger / avertissement</b></p>
+                                                <img src="{% static 'riode/images/faq/avert.png' %}">
+                                                <p><b>Pictogramme d’évacuation / secours</b></p>
+                                                <img src="{% static 'riode/images/faq/secours.png' %}">
+                                                <p><b>Signalétique incendie</b></p>
+                                                <img src="{% static 'riode/images/faq/inc.png' %}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-2" class="expand">COMMENT BALISER UN CHANTIER OU UNE ZONE DANGEREUSE ?</a>
+                                        </div>
+                                        <div id="collapse2-2" class="collapsed">
+                                            <div class="card-body">
+                                                <img src="{% static 'riode/images/faq/bal.png' %}">
+                                                <p style="text-align: justify">Le balisage permet la sécurisation d’une zone de danger de façon claire ; ainsi les personnes étrangères à la zone sont informées de 
+                                                l’existence d’un danger. Le balisage est indispensable sur de nombreux lieux de travail et doit être adapté à la nature du risque à prévenir</p>
+                                                <img src="{% static 'riode/images/faq/bal2.png' %}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-3" class="expand">POURQUOI ET COMMENT RÉALISER UN PLAN D’EVACUATION ?</a>
+                                        </div>
+                                        <div id="collapse2-3" class="collapsed">
+                                            <div class="card-body">
+                                                <img src="{% static 'riode/images/faq/evac.png' %}">
+                                                <p style="text-align: justify">Un plan d’évacuation est un plan d’un local ou d’un établissement sur lequel est illustré les éléments nécessaires à
+                                                l’évacuation (sortie, issue de secours, cheminement d’évacuation…), de même que les éléments nécessaire à la 1ère intervention
+                                                (extincteurs, RIA, déclencheur manuel…)..</p>
+                                                <p style="text-align: justify">Les plans d’évacuation sont réalisés conformément à la norme NF X08-070 (juin 2013) : informations et instructions de sécurité- consignes et instructions,
+                                                plan d’évacuation, plan d’intervention et la norme ISO 23601 : identification de sécurité- plans d’évacuation et de secours.
+                                                Il existe par ailleurs des plans appelés « plans d’intervention ». De même que les plans d’évacuation, ce sont des plans qui comportent en plus des éléments présents sur le plan d’évacuation, 
+                                                la schématisation des divers locaux techniques et autres locaux à risques particuliers ; des dispositifs et commandes de sécurité ; des organes de coupure des fluides ; des organes de coupure
+                                                des sources d'énergie ; des moyens d'extinction fixes et d'alarme.
+                                                </p>
+                                                <p><b>Où placer un plan d’évacuation ?</b></p>
+                                                <p style="text-align: justify">Les plans d’évacuation doivent être placés par niveau (sous-sol, RDC, étage), à proximité immédiate des escaliers et ascenseurs et à tous endroits
+                                                où ils pourraient être vus facilement. Ils sont orientés correctement par rapport au sens de lecture.</p>
+                                                <br>•	immeuble de bureaux
+                                                <br>o	dans les circulations : tous les 25 m environ
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 mt-10">
+                                <h2 class="title pl-2 pr-2 ls-m">CAMERA CONNECTÉE</h2>
+                                <div class="accordion accordion-border accordion-boxed accordion-plus">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-1" class="collapse"> POURQUOI CHOISIR UNE CAMERA CONNECTEE ?</a>
+                                        </div>
+                                        <div id="collapse2-1" class="expanded">
+                                            <div class="card-body">
+                                                <img src="{% static 'riode/images/faq/cam1.png' %}">
+                                                <p>Une caméra connectée  est une caméra qui vous permet une  surveillance à distance sur smartphone ou tablette. 
+                                                Elle utilise une connexion internet qui vous permet en installant une application dédiée, de surveiller avec votre 
+                                                smartphone ou tablette, où que vous soyez et en temps réel. Elle permet également d'enregistrer sur détection de mouvement 
+                                                et de regarder les enregistrements à distance au moment où vous le souhaitez Simple à installer, pratique à utiliser, 
+                                                beaucoup plus accessibles que les systèmes de vidéosurveillance filaire, en termes de prix, les caméras connectées sont de plus en 
+                                                plus utilisées pour surveiller vos maisons, vos commerces ou bureaux, votre bébé etc.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-2" class="expand">COMMENT CHOISIR VOTRE CAMERA CONNECTEE ?</a>
+                                        </div>
+                                        <div id="collapse2-2" class="collapsed">
+                                            <div class="card-body">
+                                                <p>En fonction de l’usage que vous souhaitez et de votre budget, il existe une large gamme de caméras connectées, avec des fonctionnalités multiples.
+                                                Avant de choisir votre caméra connectée, posez-vous les questions suivantes :
+                                                <br>•	<b>Avec ou sans câble secteur ?</b> Pour l’alimentation, la majorité des modèles utilisent un adaptateur secteur, mais certains disposent d’une batterie
+                                                rechargeable. Vous pouvez alors placer la caméra loin d’une prise de courant, mais il faut alors penser à recharger régulièrement la batterie. 
+                                                Pour l’extérieur, certains constructeurs proposent des panneaux solaires en option.
+                                                <br>•	<b>Intérieur ou extérieur ?</b>
+                                                <br>•	<b>Qualité des images (1080p, 2K, 4K) ?</b>
+                                                <br>•	<b>Haut-parleur et micro ?</b> Pour faire fuir les potentiels intrus, parler à votre enfant ou votre animal de compagnie, certaines caméras sont dotées de haut-parleurs capables de retransmettre votre voix. Il arrive souvent que ces haut-parleurs soient aussi en mesure de faire résonner une alarme.
+                                                <br><b>Stockage des enregistrements (micro SD ou CLOUD) ?</b> vous pouvez à tête reposée revisionner vos enregistrements ou les récupérer sur ordinateur. Vous pourrez selon les
+                                                modèles enregistrés soit sur une carte SD, la mémoire interne de votre caméra ou soit sur le Cloud propre aux fabricants. Dans ce dernier cas, 
+                                                vous pourrez visionner vos enregistrements à distance (toutefois, ce service de stockage sur Cloud est généralement sur abonnement payant)
+                                                <br>•	<b>Diverses autres fonctionnalités : angle de vue (fixe ou motorisé ?)<b>, vision nocturne, support de fixation…)
+                                                <br>•	<b>LE PRIX ?<b>
+                                                </p>
+                                                
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-3" class="expand"> COMMENT INSTALLER UNE CAMERA CONNECTEE ?</a>
+                                        </div>
+                                        <div id="collapse2-3" class="collapsed">
+                                            <div class="card-body">
+                                                <img src="{% static 'riode/images/faq/cam2.png' %}">
+                                                <p>L’installation d’une caméra connectée ne présente aucune difficulté majeure. Vous devez suivre scrupuleusement le guide d’installation fourni avec votre matériel.
+                                                    En fonction des réglages, lorsque les caméras détectent un mouvement, les utilisateurs sont avertis grâce à des notifications envoyées sur le smartphone.
+                                                    C’est à partir de la détection de mouvement que la caméra enregistre une vidéo de la scène. La durée de la vidéo varie en fonction des fabricants. Il peut s’agir d’une séquence courte (environ 10 secondes) ou aussi longue que dure l’agitation face caméra. Certains constructeurs proposent de tracker les mouvements détectés et suivent l’individu dans la pièce ; cette fonction est disponible uniquement sur les caméras pourvues d’un objectif à 360°
+                                                
+                                                <br><b>QUELQUES CONSEILS</b>
+                                                <br>Il est par exemple interdit de filmer l’extérieur de sa propriété (au-delà de votre clôture) ou la voie publique.
+                                                Le respect de la vie privée impose également de ne pas filmer les gens à leur insu.
+                                                Les vidéos sont reconnues par les juridictions comme des éléments de preuve.
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-10">
+                                <h2 class="title pl-2 pr-2 ls-m">ALARME ANTI INTRUSION SANS FIL</h2>
+                                <div class="accordion accordion-border accordion-boxed accordion-plus">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-1" class="collapse">POURQUOI CHOISIR UNE ALARME ANTI INTRUSION ?</a>
+                                        </div>
+                                        <div id="collapse2-1" class="expanded">
+                                            <div class="card-body">
+                                                <img src="{% static 'riode/images/faq/alarme1.png' %}">
+                                                <p>Un système d’alarme anti-intrusion est un ensemble de technologie permettant de détecter et de signaler l’approche, la pénétration ou le déplacement d’un intrus à l’aide d’une alarme sonore. Il est bon de savoir que Lorsqu’une alarme sonne, 90 % des cambrioleurs prennent immédiatement la fuite.
+                                                   Les systèmes anti-intrusion sont des dispositifs de sécurité  importants et utiles lorsque vous souhaitez protéger vos biens de valeurs, surtout en votre absence, ou pendant votre sommeil.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-2" class="expand">COMMENT FONCTIONNE UNE ALARME SANS FIL</a>
+                                        </div>
+                                        <div id="collapse2-2" class="collapsed">
+                                            <div class="card-body">
+                                                <p>Un système d’alarme sans fil est composé de plusieurs équipements qui fonctionnent de façon autonome (avec pile ou branché au secteur) et qui communiquent entre eux via des ondes radio.
+                                                <img src="{% static 'riode/images/faq/alarme2.png' %}">
+                                                
+                                                En général, les éléments constitutifs du système sont :
+                                                <br>•	La centrale : c’est le cerveau du système, elle reçoit les signaux des différents composants et traite l’information en déclenchant l’alarme.
+                                                    <br>•	<b>Les détecteurs de mouvement : </b>ce sont des détecteurs volumétriques qui placés à l’intérieur ou à l’extérieur détectent une présence
+                                                <br>    •	<b>Les détecteurs d’ouverture :</b> ils sont généralement placés au niveau des ouvrants (portes, fenêtres, etc) et déclenchent l’alarme en cas d’ouverture
+                                                 <br>   •	<b>Les détecteurs de bris de vitre :</b> ils déclenchent l’alarme lorsqu’une glace ou une baie vitrée est cassée par effraction
+                                                <br>    •	<b>Les sirènes intérieures et extérieures</b>
+                                                 <br>   •	<b>Le transmetteur téléphonique :</b> il permet via une carte SIM de transmettre une notification aux personnes en charge du local professionnel ou aux habitants
+                                                <br>    •	<b>Les accessoires de commande</b> (télécommande, boitier déporté, etc) pour activer ou désactiver le système
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-3" class="expand">L’INSTALLATION D’UNE ALARME SANS FIL</a>
+                                        </div>
+                                        <div id="collapse2-3" class="collapsed">
+                                            <div class="card-body">
+                                                <p>Avant de choisir votre système d’alarme, vous devez pouvoir répondre aux questions suivantes :
+                                                <br>
+                                                <br>-	Quelles sont les zones de passages obligées des cambrioleurs
+                                                <br>-	Quel type et combien de détecteurs sont nécessaires (détecteur de mouvement, bris de vitre, ouverture) ?
+                                                <br>-	En plus de la sirène intérieure, faut-il prévoir une sirène extérieure pour alerter les voisins ?
+                                                <br>-	Où dois-je positionner la centrale pour quelle soit en sécurité, mais surtout pour une bonne couverture radio des autres équipements ?
+                                                <br>-	Ai-je besoin d’un transmetteur téléphonique au cas où je suis absent du local ?
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 mt-10">
+                                <h2 class="title pl-2 pr-2 ls-m">PANNEAUX ROUTIERS</h2>
+                                <div class="accordion accordion-border accordion-boxed accordion-plus">
+                                    <div class="card">
+                                        <div id="collapse2-1" class="expanded">
+                                            <div class="card-body">
+                                                
+                                                <p>Un panneau est un signal qui par la combinaison d’une forme géométrique, de couleur, d’un symbole ou d’un pictogramme, 
+                                                fournit une indication déterminée. Les panneaux de signalisation routière permettent de rendre plus sûre la circulation routière, 
+                                                en informant les usagers des éventuels dangers, en rappelant les prescriptions de police ou en donnant des orientations.
+                                                <br>
+                                                <img src="{% static 'riode/images/faq/panneau1.png' %}">
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-2" class="expand">QUELLES DIMENSIONS CHOISIR ?</a>
+                                        </div>
+                                        <div id="collapse2-2" class="collapsed">
+                                            <div class="card-body">
+                                                <img src="{% static 'riode/images/faq/panneau2.png' %}">
+                                                
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-3" class="expand">QUE DIT LA REGLEMENTATION SUR LES PANNEAUX RETRO-REFLECHISSANTS ? </a>
+                                        </div>
+                                        <div id="collapse2-3" class="collapsed">
+                                            <div class="card-body">
+                                                <p>La retro-réflexion est un système passif qui permet à un panneau de réfléchir la lumière émise par les phares des voitures, cela permet au panneau d’être visible de nuit.
+                                                Les films retro-réfléchissants utilisés pour la confection des panneaux, sont des systèmes optiques composés soit de microbilles ou soit de micro-prismes
+                                                En fonction des critères de vitesse et de visibilité, on distingue 2 classes de retro-réflexion :
+                                                <br>•	Les panneaux de classes 1 : (50 cd/lux/m² visible jusqu’à 100m, durée 7 ans) Le film de classe 1 correspond au niveau de service minimal sur les réseaux en rase campagne et en agglomération où la classe 2 n’est pas obligatoire.
+                                                <br>•	Les panneaux de classe 2 : (180 cd/lux/m² visible jusqu’à 250m, durée 10 ans), la classe 2 est obligatoire dans les cas suivants :
+                                                <br>•	Sur autoroute et route à grande circulation, et en ras campagne pour tout panneau dont la hauteur sous panneau est à plus de 2m
+                                                <br>•	En agglomération (ville): sur route dont la vitesse dépasse 70km/h ou pour tous les panneaux de priorité et d’interdiction de type AB
+                                                <br><img src="{% static 'riode/images/faq/panneau3.png' %}">
+                                                <br>NB : À l’intérieur d’un site (usine par exemple) où la vitesse est limitée et que l’éclairage est bon, vous n’avez pas forcément besoin de panneaux rétroréfléchissants.
+
+
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-3" class="expand">COMMENT POSER UN PANNEAU ROUTIER ? </a>
+                                        </div>
+                                        <div id="collapse2-3" class="collapsed">
+                                            <div class="card-body">
+                                                <p>Les panneaux de signalisation routière sont placés sur le côté de la route.
+                                                <br><img src="{% static 'riode/images/faq/panneau4.png' %}">
+                                                <br><img src="{% static 'riode/images/faq/panneau5.png' %}">
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                
+                                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 mt-10">
+                                <h2 class="title pl-2 pr-2 ls-m">TROUSSE DE SECOURS : POURQUOI ET QUE CONTIENT T-ELLE ?</h2>
+                                <div class="accordion accordion-border accordion-boxed accordion-plus">
+                                    <div class="card">
+                                            <div id="collapse2-5" class="expanded">
+                                                <div class="card-header">
+                                                <a href="#collapse2-1" class="collapse"> POURQUOI AVOIR UNE TROUSSE DE SECOURS ?</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <img src="{% static 'riode/images/faq/trousse1.png' %}">
+                                                <p>A la maison, sur le lieu de travail, sur la route du voyage, pendant une activité physique ou du bricolage, 
+                                                les accidents peuvent survenir à tout moment. Facile à transporter et complet, la trousse de secours vous permettra 
+                                                de soigner vos blessures et de prodiguer les premiers secours, en attendant d’aller à l’hôpital ou l’arrivée des secours.
+
+                                                <br>
+                                                Le code du travail stipule que tout lieu de travail doit être équipé de matériels de premiers secours adaptés à la nature des risques encourus par les travailleurs. Les trousses de secours sont des dispositifs qui répondent à cette obligation.
+                                                <br>
+                                                Une trousse de secours est un dispositif contenant des produits pharmaceutiques de pansement et des instruments, permettant de prodiguer les premiers secours en cas de blessure ou d’accident. Elle ne devrait pas contenir de médicaments pour éviter les erreurs d’administration ou d’éventuels accidents.
+
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-2" class="expand"> QUE DOIT CONTENIR UNE TROUSSE DE SECOURS ?</a>
+                                        </div>
+                                        <div id="collapse2-2" class="collapsed">
+                                            <p>Disposer d'une trousse de secours vous permet de pouvoir réagir rapidement et efficacement face à n'importe quel type de lésion ou de blessure, et de porter secours à autrui en urgence. 
+                                            <br>La trousse de secours doit être adaptée aux risque encourus et à l’activité. Mais de façon général, elle contient les éléments suivants :
+                                            <br>•	Un guide de premiers secours, les numéros d’appels d’urgence
+                                            <br>•	Des compresses stériles 20 x 20 cm, des bandes extensibles en 3 m x 7 cm, un rouleau de sparadrap en 5 m, des pansements adhésifs 2 x 6 cm ou 4 x 6 cm ou 10 x 6 cm, des pansements compressif stérile 2,5 m x 6 cm ou 2,5 m x 10 cm, des Compresses alcoolisées, des compresses antiseptiques, des unidoses 5 ml pour lavages oculaires, 1 Paire de ciseaux, 1 Pince à échardes, 1 Doigtier, 2 Paires de gants vinyle
+                                            <br>•	Une couverture de survie, des gels hydro-alcooliques
+
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-3" class="expand">QUELQUES CONSEILS </a>
+                                        </div>
+                                        <div id="collapse2-3" class="collapsed">
+                                            <div class="card-body">
+                                                <p>Pour être certain de disposer d’un matériel de qualité, le kit de secours doit être conservé dans un endroit sec, à l'abri de la chaleur et de l’humidité. Vérifiez régulièrement les dates de péremption éventuelles et l’état général de votre matériel de secours. Optez de préférence pour une trousse de secours à la fois légère, solide et facile à transporter.
+                                                 <br>Pensez à vous former aux gestes de premiers secours, vous pourriez ainsi sauver des vies.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+{% endblock %}

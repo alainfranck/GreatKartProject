@@ -1,0 +1,233 @@
+<div class="sticky-footer sticky-content fix-bottom">
+    {% if user.id is None %}
+    <a href="{% url 'login' %}">
+        <i lass="d-icon-user" style="font-size: 1.5rem;"></i> 
+        &nbsp;&nbsp;Connexion
+    </a>
+    &nbsp;&nbsp; | <a href="{% url 'register' %}">Créer un compte</a>
+    {% else %}
+    <a href="#" class="help d-lg-show">Bienvenue {{ user.first_name }}</a>
+    <a href="{% url 'logout' %}">
+        <i lass="d-icon-user" style="font-size: 1.5rem;"></i> 
+        &nbsp;&nbsp;Déconnexion
+    </a>
+    {% endif %}
+    <div class="header-search hs-toggle dir-up">
+        <a href="#" class="search-toggle sticky-link">
+            <i class="d-icon-search"></i>
+            <span>Recherche</span>
+        </a>
+        <form action="" class="input-wrapper">
+            <input type="text" class="form-control" name="search" autocomplete="off"
+                placeholder="Recherche..." required />
+            <button class="btn btn-search" type="submit">
+                <i class="d-icon-search"></i>
+            </button>
+        </form>
+    </div>
+</div>
+<!-- Scroll Top -->
+<a id="scroll-top" href="#top" title="Top" role="button" class="scroll-top"><i class="d-icon-arrow-up"></i></a>
+
+<!-- MobileMenu -->
+<div class="mobile-menu-wrapper">
+    <div class="mobile-menu-overlay">
+    </div>
+    <!-- End of Overlay -->
+    <a class="mobile-menu-close" href=""><i class="d-icon-times"></i></a>
+    <!-- End of CloseButton -->
+    <div class="mobile-menu-container scrollable">
+        <form action="{% url 'search' %}" class="input-wrapper" method="GET">
+            <input type="text" class="form-control" name="search" autocomplete="off"
+                placeholder="Recherche..." required />
+            <button class="btn btn-search" type="submit">
+                <i class="d-icon-search"></i>
+            </button>
+        </form>
+        <!-- End of Search Form -->
+        <ul class="mobile-menu mmenu-anim">
+            <li>
+                <a href="{% url 'home' %}">Accueil</a>
+            </li>
+            <li>
+                <a href="">SECTEUR D’ACTIVITE</a>
+                <ul>
+                    <li>
+                        <a href="">
+                            Les indispensables
+                        </a>
+                        <ul>
+                            <li><a href="https://secusigne.net/shop/habitation/">Habitation</a></li>
+                            <li><a href="https://secusigne.net/shop/bureau/">Bureau</a></li>
+                            <li><a href="https://secusigne.net/shop/commerce">Commerce</a></li>
+                            <li><a href="https://secusigne.net/shop/hotel/">Hôtel</a></li>
+                            <li><a href="https://secusigne.net/shop/entrepot/">Entrepôt de stockage</a></li>
+                            <li><a href="https://secusigne.net/shop/chantier/">Chantier BTP</a></li>
+                            <li><a href="https://secusigne.net/shop/hopital/">Hôpital</a></li>
+                            <li><a href="https://secusigne.net/shop/ecole/">Ecole</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">SIGNALETIQUE</a>
+                <ul>
+                    <li>
+                        <a href="">Signalétique et consigne</a>
+                        <ul>
+                            <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-secours-et-evacuation/">Secours et évacuation</a></li>
+                            <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-incendie/">Incendie</a></li>
+                            <li><a href="http://secusigne.net/shop/obligation/">Obligation</a></li>
+                            <li><a href="https://secusigne.net/shop/interdiction/">Interdiction</a></li>
+                            <li><a href="https://secusigne.net/shop/danger/">Danger - avertissement</a></li>
+                            <li>
+                                <a href="https://secusigne.net/shop/chimique/">Chimique</a>
+                            </li>
+                            <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-environnement/">Environnement</a></li>
+                            <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-consigne-de-securite/">Consigne de sécurité</a></li>
+                            <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-affichage-sensibilisation">Affichage - sensibilisation</a></li>
+                            <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-balisage">Balisage</a></li>
+                            <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-marquage-au-sol/">Marquage au sol</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Panneau routier</a>
+                        <ul>
+                            <li><a href="https://secusigne.net/store/category/signaletique-panneau-routier-panneau-de-danger/">Panneau de danger</a></li>
+                            <li><a href="https://secusigne.net/store/category/signaletique-panneau-routier-panneau-dinterdiction/">Panneau d’interdiction</a></li>
+                            <li><a href="https://secusigne.net/store/category/signaletique-panneau-routier-panneau-de-stationnement/">Panneau de stationnement</a></li>
+                            <li><a href="https://secusigne.net/store/category/signaletique-panneau-routier-panneau-dobligation/">Panneau d’obligation</a></li>
+                            <li><a href="">Panneau de chantier</a></li>
+                            <li><a href="">Panneau directionnel</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Plaque de porte</a>
+                        <ul>
+                            <li><a href="">Plaque nominative standard</a></li>
+                            <li><a href="">Plaque information</a></li>
+                            <li><a href="">Plaque interchangeable</a></li>
+                            <li><a href="">Plaque pour poignée de porte</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">INCENDIE & SECOURS</a>
+                <ul>
+                    <li>
+                        <a href="">Extincteur et matériel incendie</a>
+                        <ul>
+                            <li><a href="https://secusigne.net/store/category/incendie-et-secours-extincteurs/">Extincteur</a></li>
+                            <li><a href="https://secusigne.net/store/category/incendie-et-secours-couverture-antifeu/">Couverture antifeu</a></li>
+                            <li><a href="https://secusigne.net/store/category/incendie-et-secours-couverture-antifeu/">Détecteur de fumée - gaz</a></li>
+                            <li><a href="https://secusigne.net/store/category/incendie-et-secours-bac-a-sable/">Bac à sable</a></li>
+                            <li><a href="https://secusigne.net/store/category/incendie-et-secours-housse-de-protection/">Housse de protection</a></li>
+                            <li><a href="">Support au sol pour extincteur</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://secusigne.net/store/category/incendie-et-secours-kit-incendie-maison/">Kit incendie maison</a>
+                    </li>
+                    <li>
+                        <a href="https://secusigne.net/store/category/incendie-et-secours-kit-incendie-vehicule/">Kit incendie véhicule</a>
+                    </li>
+                    <li>
+                        <a href="">Matériel de secours</a>
+                        <ul>
+                            <li><a href="https://secusigne.net/store/category/materiel-de-secours-trousses/">Trousse de secours</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">SURETE & AGRESSION</a>
+                <ul>
+                    <li>
+                        <a href="">Camera</a>
+                        <ul>
+                            <li><a href="">Kit video complet</a></li>
+                            <li><a href="https://secusigne.net/store/category/surete-agression-camera-factice/">Camera factice</a></li>
+                            <li><a href="https://secusigne.net/store/category/surete-agression-camera-connecte/">Camera connectée</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="http://secusigne.net/store/category/visiophone-et-sonnette/">Visiophone et sonnette</a>
+                    </li>
+                    <li>
+                        <a href="">Alarme anti intrusion</a>
+                    </li>
+                    <li>
+                        <a href="https://secusigne.net/store/category/surete-et-agression-coffre-fort/">Coffre-fort</a>
+                        <ul>
+                            <li><a href="">GPS anti-vol</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">DECORATION</a>
+                <ul>
+                    <li>
+                        <a href="">Tableau décoratif</a>
+                        <ul>
+                            <li><a href="https://secusigne.net/store/category/tableau-decoratif-nature-et-paysage/">Nature et paysage</a></li>
+                            <li><a href="https://secusigne.net/store/category/tableau-decoratif-abstrait-urbain/">Abstrait et urbain.</a></li>
+                            <li><a href="https://secusigne.net/store/category/tableau-decoratif-enfants/">Enfant</a></li>
+                            <li><a href="https://secusigne.net/store/category/tableau-decoratif-animaux/">Animaux</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Sticker déco</a>
+                        <ul>
+                            <li><a href="">Bande adhésive pour vitrage</a></li>
+                            <li><a href="">Sticker vitrine</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Affichage</a>
+                        <ul>
+                            <li><a href="">Cadre d’affichage</a></li>
+                            <li><a href="">Présentoir de table</a></li>
+                            <li><a href="">Rail d’affichage</a></li>
+                            <li><a href="">Kakemono (roll up)</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://secusigne.net/store/category/accessoire-de-pose/">ACCESSOIRE DE POSE</a>
+            </li>
+            <li>
+                <a href="{% url 'guide' %}"><i class="fa fa-file" style="font-size: 2rem"></i>Guide d'achat</a>
+            </li>
+        </ul>
+        <!-- End of MobileMenu -->
+        <!-- <ul class="mobile-menu mmenu-anim">
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cart.html">My Cart</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+        </ul> -->
+        <!-- End of MobileMenu -->
+    </div>
+</div>
+<!--
+<div class="newsletter-popup mfp-hide" id="newsletter-popup" style="background-image: url(images/newsletter-popup.jpg)">
+    <div class="newsletter-content">
+        <h4 class="text-uppercase text-dark">Up to <span class="text-primary">20% Off</span></h4>
+        <h2 class="font-weight-semi-bold">Sign up to <span>RIODE</span></h2>
+        <p class="text-grey">Subscribe to the Riode eCommerce newsletter to receive timely updates from your favorite
+            products.</p>
+        <form action="#" method="get" class="input-wrapper input-wrapper-inline input-wrapper-round">
+            <input type="email" class="form-control email" name="email" id="email2" placeholder="Email address here..."
+                required="">
+            <button class="btn btn-dark" type="submit">SUBMIT</button>
+        </form>
+        <div class="form-checkbox justify-content-center">
+            <input type="checkbox" class="custom-checkbox" id="hide-newsletter-popup" name="hide-newsletter-popup"
+                required />
+            <label for="hide-newsletter-popup">Don't show this popup again</label>
+        </div>
+    </div>
+</div>

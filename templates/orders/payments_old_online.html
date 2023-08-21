@@ -1,0 +1,300 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="section-content padding-y bg">
+    
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+              <div class="toggle_info">
+                <center><h2>MON PANIER</h2></center>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="toggle_info">
+                  <center><h2>FINALISER LA COMMANDE</h2></center>
+                </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="toggle_info">
+                <center><h2  style="color: red;">PAIEMENT</h2></center>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+              <div class="medium_divider"></div>
+              <div class="divider center_icon"><i class="linearicons-credit-card"></i></div>
+              <div class="medium_divider"></div>
+            </div>
+        </div>
+        <h2 class="title title-simple text-left">RESUME DE VOTRE COMMANDE</h2>
+
+        <form method="post" action="{% url 'payments' %}">
+            <div class="row">
+                <aside class="col-lg-8">
+                    <div class="card">
+                        <h3 style="color: red;"><b>INFORMATIONS DE LIVRAISON</b></h3>
+                        <input name="orderID" value="{{order.id}}" style="display: none;">
+
+                        <div class="card-body">
+                            <p class="card-text mb-0">{{ order.full_name }}</p>
+                            <p class="card-text mb-0">{{ order.full_address }}</p>
+                            <p class="card-text mb-0">{{ order.city }}, {{ order.state }}</p>
+                            <p class="card-text mb-0">{{ order.country }}</p>
+                            <p class="card-text mb-0">{{ order.email}}</p>
+                            <p class="card-text mb-0">{{ order.phone}}</p>
+                            {% if order.order_note %}
+                            <b>Order note: </b>{{ order.order_note }}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    
+                    <!--
+                    <select name="moyens" class="form-control">
+                        
+                        {% for m in moyens %}
+                        <option value="{{ m.status }}" selected="selected">{{ m.user_id }}{{ m.status }}</option>
+                        {% endfor %}
+                    </select>
+                    -->
+                    <table class="shipping">
+                        <tbody>
+                        <tr class="sumnary-shipping shipping-row-last">
+                            <td colspan="2">
+                                <h3 style="color: red;"><b>MOYENS DE PAIEMENT</b></h3>
+                                <ul>
+                                    <li>
+                                        <div class="custom-radio">
+                                            <input type="radio" class="form-check-input" id="radio1" name="payment_method"
+                                            value="Paiement à la livraison" checked>
+                                     <label class="form-check-label" for="radio1">
+                                        
+                                        <h4><img src="{% static 'images/cashicon.png' %}"><b> Payer cash á la livraison</b></h4>
+                                         <p style="color:#000; margin-left: 50px;">
+                                            Travaux personnalisés: Avance 50% sur commande
+                                            Si à la livraison, vous désisté, seulement 10% de votre avance vous sera 
+                                            rembourser sous 15j.
+                                            
+                                         </p>
+                                     </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="custom-radio">
+                                            <input type="radio" class="form-check-input" id="radio2" name="payment_method"
+                                       value="Mobile Money">
+                                <label class="form-check-label" for="radio2">
+                                    <h4><img src="{% static 'images/owa.jpg' %}"><b> Orange Money ou Wave</b></h4>
+                                    
+                                    <p style="color:#000; margin-left: 50px;">
+                                        Un seul numéro orange money ou wave : 07 79 11 11 00
+                                        Capturer votre reçu à l’écran ou faite une photo d’un reçu physique 
+                                        et envoyez le nous par whatsApp et mentionnez dans votre message 
+                                        votre nom et le numéro de la commande.
+
+                                    </p>
+                                </label>
+                                        </div>
+                                    </li>
+                                    
+                                    <li>
+                                        <div class="custom-radio">
+                                            <input type="radio" class="form-check-input" id="radio3" name="payment_method" value="Paiement par chèque">
+                                <label class="form-check-label" for="radio3">
+                                    <h4><img src="{% static 'images/cheque.png' %}"><b> Payer par chèque</b></h4>
+                                    <P style="color:#000; margin-left: 50px;">
+                                        Vous serez livrez après encaissement du chèque.
+
+                                    </P>
+                                </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <p>
+                        <b><h3>
+                            NB: Au montant total de votre commande, il sera ajouté les frais de livraison qui vous seront communiqués
+                        </h3></b>
+                    </p>
+                    <div class="form-checkbox justify-content-center">
+                        <input type="checkbox" class="custom-checkbox" id="hide-newsletter-popup" name="hide-newsletter-popup" required="">
+                        <label for="hide-newsletter-popup"><h3 style="color: red;">J'ai lu les conditions générales de vente et j'y adhère sans réserve.</h3></label>
+                    </div>
+                    <br>
+                    <!--
+                    <div class="card">
+                        <h5 class="card-header">Review Products</h5>
+                        <div class="card-body">
+                            <table class="table table-borderless table-shopping-cart">
+                                <thead class="text-muted">
+                                <tr class="small text-uppercase">
+                                    <th scope="col">Product</th>
+                                    <th scope="col" width="120">Quantity</th>
+                                    <th scope="col" width="120">Price</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                {% for cart_item in cart_items %}
+                                <tr>
+                                    <td>
+                                        <figure class="itemside align-items-center">
+                                            <div class="aside">
+                                                <img src="{{ cart_item.product.images.url }}" class="img-sm">
+                                            </div>
+                                            <figcaption class="info">
+                                                <a href="{{ cart_item.product.get_url }}" class="title text-dark">
+                                                    {{ cart_item.product.product_name }}</a>
+                                                <p class="text-muted small">
+                                                    {% if cart_item.variations.all %}
+                                                    {% for item in cart_item.variations.all %}
+                                                    {{ item.variation_category | capfirst }} :
+                                                    {{ item.variation_value | capfirst}}<br>
+                                                    {% endfor %}
+                                                    {% endif %}
+                                                </p>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <label>{{ cart_item.quantity }}</label>
+                                    </td>
+                                    <td>
+                                        <div class="price-wrap">
+                                            <var class="price">${{ cart_item.sub_total }}</var>
+                                            <small class="text-muted"> ${{ cart_item.product.price }} each </small>
+                                        </div> 
+                                    </td>
+                                </tr>
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    -->
+                </aside> <!-- col.// -->
+                <aside class="col-lg-4">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <dl class="dlist-align">
+                                <dt>Total:</dt>
+                                <dd class="text-right">{{ total }} FCFA</dd>
+                            </dl>
+                            <!--
+                            <dl class="dlist-align">
+                                <dt>Tax:</dt>
+                                <dd class="text-right"> {{ tax }} FCFA</dd>
+                            </dl>
+                            -->
+                            <dl class="dlist-align">
+                                <dt>Total général:</dt>
+                                <dd class="text-right text-dark b"><strong>{{ grand_total }} FCFA</strong></dd>
+                            </dl>
+                            <hr>
+                            <!--                            <p class="text-center mb-3">-->
+                            <!--                                <img src="{% static './images/misc/payments.png' %}" height="26">-->
+                            <!--                            </p>-->
+                            <!--                            <div id="paypal-button-container">-->
+                            <!--                                &lt;!&ndash;                            paypal button will load here&ndash;&gt;-->
+                            <!--                            </div>-->
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary btn-block"> Confirmer</button>
+                        </div> <!-- card-body.// -->
+                    </div> <!-- card.// -->
+                </aside> <!-- col.// -->
+
+            </div> <!-- row.// -->
+        </form>
+    </div> <!-- container .//  -->
+</section>
+
+<script>
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    var amount = "{{ grand_total }}"
+    var url = "{% url 'payments' %}"
+    var csrftoken = getCookie('csrftoken');
+    var orderID = "{{ order.order_number }}"
+    var payment_method = 'PayPal'
+    var redirect_url = "{% url 'order_complete' %}"
+
+    // Render the PayPal button into #paypal-button-container
+    paypal.Buttons({
+
+        style: {
+            color:  'blue',
+            shape:  'rect',
+            label:  'pay',
+            height: 40
+        },
+
+        // Set up the transaction
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: amount,
+                    }
+                }]
+            });
+        },
+
+        // Finalize the transaction
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                // Show a success message to the buyer
+                console.log(details);
+                sendData();
+                function sendData(){
+                    fetch(url,{
+                        method: "POST",
+                        headers: {
+                            "content-type":"application/json",
+                            "X-CSRFToken": csrftoken,
+                        },
+                        body: JSON.stringify({
+                            orderID: orderID,
+                            transID: details.id,
+                            payment_method: payment_method,
+                            status: details.status,
+                        }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        window.location.href = redirect_url + '?order_number='+data.order_number+'&payment_id='+data.transID;
+                    });
+                }
+            });
+        }
+
+
+    }).render('#paypal-button-container');
+
+
+
+
+</script>
+{% endblock %}

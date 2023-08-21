@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main class="main">
+    <div class="page-header"
+        style="background-image: url({% static 'riode/images/faq/faq.jpg' %}); background-color: #3C63A4; height: 200px;">
+        <center><h1 class="page-title" style="color: #fff; padding-top: 80px;">Guide d'achats</h1></center>
+    </div>
+    <!-- End PageHeader -->
+    <section class="blog-post-wrapper mt-6 mt-md-10 pt-7 appear-animate"
+            data-animation-options="{'name': 'fadeIn', 'duration': '1s'}">
+            <div class="container">
+
+                <div class="row">
+                    {% for g in guides %}
+                    <div class="col-md-4">
+                        <div class="blog-post mb-4">
+                            <article class="post post-frame overlay-zoom">
+                                <figure class="post-media">
+                                    <a href="{% url 'detail-guide' g.slug %}">
+                                        <img src="{{ g.image.url }}" alt="Blog post" width="340" height="206"
+                                            style="background-color: #919fbc;" />
+                                    </a>
+                                </figure>
+                                <div class="post-details">
+                                    <h5 class="post-title"><a href="{% url 'detail-guide' g.slug %}">{{ g.titre }}</a></h5>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                    
+                <!--end content-->
+            </div>
+            
+        </section>
+</main>
+
+{% endblock %}

@@ -1,0 +1,336 @@
+{% load static %}
+<h1 class="d-none">secusigne.ci - Quality first !</h1>
+        <header class="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="header-left">
+                        <p class="welcome-msg">secusigne.ci - Quality first !</p>
+                    </div>
+                    <div class="header-right">
+                        <!--
+                        <div class="dropdown">
+                            <a href="#currency">USD</a>
+                            <ul class="dropdown-box">
+                                <li><a href="#USD">USD</a></li>
+                                <li><a href="#EUR">EUR</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown ml-5">
+                            <a href="#language">ENG</a>
+                            <ul class="dropdown-box">
+                                <li>
+                                    <a href="#USD">ENG</a>
+                                </li>
+                                <li>
+                                    <a href="#EUR">FRH</a>
+                                </li>
+                            </ul>
+                        </div>
+                        -->
+                        <!-- End DropDown Menu -->
+                        <span class="divider"></span>
+                        <a href="" class="contact d-lg-show"><i class="d-icon-map"></i>Contact & localisation</a>
+                        <a href="#" class="help d-lg-show"><i class="d-icon-info"></i> Guide d'achat</a>
+                        {% if user.id is None %}
+                        <a href="{% url 'login' %}">
+                            <i lass="d-icon-user" style="font-size: 1.5rem;"></i> 
+                            &nbsp;&nbsp;Connexion
+                        </a>
+                        &nbsp;&nbsp; | <a href="{% url 'register' %}">Créer un compte</a>
+                        {% else %}
+                        <a href="#" class="help d-lg-show">Bienvenue {{ user.first_name }}</a>
+                        <a href="{% url 'logout' %}">
+                            <i lass="d-icon-user" style="font-size: 1.5rem;"></i> 
+                            &nbsp;&nbsp;Déconnexion
+                        </a>
+                        {% endif %}
+                        <!-- End of Login -->
+                    </div>
+                </div>
+            </div>
+            <!-- End HeaderTop -->
+            <div class="header-middle sticky-header fix-top sticky-content">
+                <div class="container">
+                    <div class="header-left">
+                        <a href="#" class="mobile-menu-toggle">
+                            <i class="d-icon-bars2"></i>
+                        </a>
+                        <a href="{% url 'home' %}" class="logo">
+                            <img src="{% static 'riode/images/logo.png' %}" alt="logo" width="153" height="44" />
+                        </a>
+                        <!-- End Logo -->
+
+                        <div class="header-search hs-simple">
+                            <form action="{% url 'search' %}" class="input-wrapper" method="GET">
+                                <input type="text" class="form-control" name="keyword" autocomplete="off"
+                                    placeholder="Recherche..." required />
+                                <button class="btn btn-search" type="submit">
+                                    <i class="d-icon-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <!-- End Header Search -->
+                    </div>
+                    <div class="header-right">
+                        <a href="tel:#" class="icon-box icon-box-side">
+                            <div class="icon-box-icon mr-0 mr-lg-2">
+                                <i class="d-icon-phone"></i>
+                            </div>
+                            <div class="icon-box-content d-lg-show">
+                                <h4 class="icon-box-title">Un conseil ?</h4>
+                                <p>+225 27 22 42 27 48 - 07 79 52 52 52</p>
+                            </div>
+                        </a>
+                        <!--
+                        <a href="wishlist.html" class="wishlist">
+                            <i class="d-icon-heart"></i>
+                        </a>
+                        -->
+                        <span class="divider"></span>
+                        <div class="dropdown cart-dropdown type2 cart-offcanvas mr-0 mr-lg-2">
+                            <a href="{% url 'cart' %}" class="cart-toggle label-block link">
+                                <div class="cart-label d-lg-show">
+                                    <span class="cart-name">Mon panier:</span>
+                                    <!--<span class="cart-price"></span>-->
+                                </div>
+                                <i class="d-icon-bag"><span class="cart-count">{{ cart_count }}</span></i>
+                            </a>
+                            <div class="cart-overlay"></div>
+                            <!-- End Cart Toggle -->
+                            <div class="dropdown-box">
+                                <div class="cart-header">
+                                    <h4 class="cart-title">Mon panier</h4>
+                                    <a href="#" class="btn btn-dark btn-link btn-icon-right btn-close">Fermer
+                                        <i class="d-icon-arrow-right"></i>
+                                        <span class="sr-only">Panier</span>
+                                    </a>
+                                </div>
+                                <div class="products scrollable">
+                                    <!-- End of Cart Product -->
+                                    {% for cart_item in cart_items %}
+                                        <div class="product product-cart">
+                                            <figure class="product-media">
+                                                <a href="{{ cart_item.product.get_url }}">
+                                                    <img src="{{ cart_item.product.images.url }}" alt="product" width="80"
+                                                        height="88" />
+                                                </a>
+                                                <button class="btn btn-link btn-close">
+                                                    <i class="fas fa-times"></i><span class="sr-only">Fermer</span>
+                                                </button>
+                                            </figure>
+                                            <div class="product-detail">
+                                                <a href="{{ cart_item.product.get_url }}" class="product-name">{{ cart_item.product.product_name }}</a>
+                                                <div class="price-box">
+                                                    <span class="product-quantity">{{ cart_item.quantity }}</span>
+                                                    <span class="product-price">{{ cart_item.product.price }} FCFA</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    <!-- End of Cart Product -->
+                                </div>
+                                <!-- End of Products  -->
+                                <div class="cart-total">
+                                    <label>Sous total:</label>
+                                    <span class="price">{{ cart_item.sub_total }} FCFA</span>
+                                </div>
+                                <!-- End of Cart Total -->
+                                <div class="cart-action">
+                                    <a href="{% url 'cart' %}" class="btn btn-dark btn-link">Voir le panier</a>
+                                    <a href="{% url 'checkout' %}" class="btn btn-dark"><span>Commander</span></a>
+                                </div>
+                                <!-- End of Cart Action -->
+                            </div>
+                            <!-- End Dropdown Box -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-bottom d-lg-show" style="background: #fff;">
+                <div class="container">
+                    <div class="header-left">
+                        <nav class="main-nav">
+                            <ul class="menu">
+                                <li>
+                                    <a href="{% url 'home' %}">ACCUEIL</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">SECTEUR D’ACTIVITE</a>
+                                    <ul>
+                                        <li><b>Les indispensables</b></li>
+                                        <li><a href="https://secusigne.net/shop/habitation/">Habitation</a></li>
+                                        <li><a href="https://secusigne.net/shop/bureau/">Bureau</a></li>
+                                        <li><a href="https://secusigne.net/shop/commerce">Commerce</a></li>
+                                        <li><a href="https://secusigne.net/shop/hotel/">Hôtel</a></li>
+                                        <li><a href="https://secusigne.net/shop/entrepot/">Entrepôt de stockage</a></li>
+                                        <li><a href="https://secusigne.net/shop/chantier/">Chantier BTP</a></li>
+                                        <li><a href="https://secusigne.net/shop/hopital/">Hôpital</a></li>
+                                        <li><a href="https://secusigne.net/shop/ecole/">Ecole</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">SIGNALETIQUE</a>
+                                    <div class="megamenu">
+                                        <div class="row">
+                                            <div class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title">Signalétique et consigne</h4>
+                                                <ul>
+                                                    <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-secours-et-evacuation/">Secours et évacuation</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-incendie/">Incendie</a></li>
+                                                    <li><a href="http://secusigne.net/shop/obligation/">Obligation</a></li>
+                                                    <li><a href="https://secusigne.net/shop/interdiction/">Interdiction</a></li>
+                                                    <li><a href="https://secusigne.net/shop/danger/">Danger - avertissement</a></li>
+                                                    <li>
+                                                        <a href="https://secusigne.net/shop/chimique/">Chimique</a>
+                                                    </li>
+                                                    <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-environnement/">Environnement</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-consigne-de-securite/">Consigne de sécurité</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-affichage-sensibilisation">Affichage - sensibilisation</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-balisage">Balisage</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/signaletique-signaletique-et-consigne-marquage-au-sol/">Marquage au sol</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title">Panneau routier</h4>
+                                                <ul>
+                                                    <li><a href="https://secusigne.net/store/category/signaletique-panneau-routier-panneau-de-danger/">Panneau de danger</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/signaletique-panneau-routier-panneau-dinterdiction/">Panneau d’interdiction</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/signaletique-panneau-routier-panneau-de-stationnement/">Panneau de stationnement</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/signaletique-panneau-routier-panneau-dobligation/">Panneau d’obligation</a></li>
+                                                    <li><a href="">Panneau de chantier</a></li>
+                                                    <li><a href="">Panneau directionnel</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title">Plaque de porte</h4>
+                                                <ul>
+                                                    <li><a href="">Plaque nominative standard</a></li>
+                                                    <li><a href="">Plaque information</a></li>
+                                                    <li><a href="">Plaque interchangeable</a></li>
+                                                    <li><a href="">Plaque pour poignée de porte</a></li>
+                                                </ul>
+                                            </div>
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="">INCENDIE & SECOURS</a>
+                                    <div class="megamenu">
+                                        <div class="row">
+
+                                            <div class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title">Extincteur et matériel incendie</h4>
+                                                <ul>
+                                                    <li><a href="https://secusigne.net/store/category/incendie-et-secours-extincteurs/">Extincteur</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/incendie-et-secours-couverture-antifeu/">Couverture antifeu</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/incendie-et-secours-detecteur-de-fumee-gaz/">Détecteur de fumée - gaz</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/incendie-et-secours-bac-a-sable/">Bac à sable</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/incendie-et-secours-housse-de-protection/">Housse de protection</a></li>
+                                                    <li><a href="">Support au sol pour extincteur</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title"><a href="https://secusigne.net/store/category/incendie-et-secours-kit-incendie-maison/">Kit incendie maison</a></h4>
+                                            </div>
+                                            <div class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title"><a href="https://secusigne.net/store/category/incendie-et-secours-kit-incendie-vehicule/">Kit incendie véhicule</a></h4>
+                                            </div>
+
+                                            <div
+                                                class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title">Matériel de secours</h4>
+                                                <ul>
+                                                    <li><a href="https://secusigne.net/store/category/materiel-de-secours-trousses/">Trousse de secours</a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- End MegaMenu -->
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="">SURETE & AGRESSION</a>
+                                    <div class="megamenu">
+                                        <div class="row">
+
+                                            <div class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title">Camera</h4>
+                                                <ul>
+                                                    <li><a href="">Kit video complet</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/surete-agression-camera-factice/">Camera factice</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/surete-agression-camera-connecte/">Camera connectée</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <a href="http://secusigne.net/store/category/visiophone-et-sonnette/"><h4 class="menu-title">Visiophone et sonnette</h4></a>
+                                            </div>
+                                            <div class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title">Alarme anti intrusion</h4>
+                                            </div>
+
+                                            <div
+                                                class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title"><a href="https://secusigne.net/store/category/surete-et-agression-coffre-fort/">Coffre-fort</a></h4>
+                                            </div>
+                                            <div
+                                                class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title">GPS anti-vol</h4>
+                                            </div>
+                                            <!-- End MegaMenu -->
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="">DECORATION</a>
+                                    <div class="megamenu">
+                                        <div class="row">
+                                            <div class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title">Tableau décoratif</h4>
+                                                <ul>
+                                                    <li><a href="https://secusigne.net/store/category/tableau-decoratif-nature-et-paysage/">Nature et paysage</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/tableau-decoratif-abstrait-urbain/">Abstrait et urbain.</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/tableau-decoratif-enfants/">Enfant</a></li>
+                                                    <li><a href="https://secusigne.net/store/category/tableau-decoratif-animaux/">Animaux</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title">Sticker déco</h4>
+                                                <ul>
+                                                    <li><a href="">Bande adhésive pour vitrage</a></li>
+                                                    <li><a href="">Sticker vitrine</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="col-4 col-sm-4 col-md-3 col-lg-4">
+                                                <h4 class="menu-title">Affichage</h4>
+                                                <ul>
+                                                    <li><a href="">Cadre d’affichage</a></li>
+                                                    <li><a href="">Présentoir de table</a></li>
+                                                    <li><a href="">Rail d’affichage</a></li>
+                                                    <li><a href="">Kakemono (roll up)</a></li>
+                                                </ul>
+                                            </div>
+
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="https://secusigne.net/store/category/accessoire-de-pose/">ACCESSOIRE DE POSE</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header-right">
+                        <!--<a href="https://secusigne.net/shop/faq/"><i class="fa fa-file" style="font-size: 2rem"></i>Guide d'achat</a>-->
+                        <a href="{% url 'guide' %}"><i class="fa fa-file" style="font-size: 2rem"></i>Guide d'achat</a>
+                    </div>
+                </div>
+            </div>
+        </header>

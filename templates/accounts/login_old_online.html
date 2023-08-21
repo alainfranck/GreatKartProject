@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="main">
+    {% if request.GET.command == 'verification' %}
+
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li>Un lien de vérification vous a été envoyé par mail, veuillez cliquer sur le lien {{request.GET.email}}.</li>
+                <li>Deja enregistré ? <a href="{% url 'login' %}">Connexion</a></li>
+            </ul>
+        </div>
+    </nav>
+    {% else %}
+    <div class="page-content mt-6 pb-2 mb-10">
+        <div class="container">
+            
+            <div class="login-popup">
+                {% include 'accounts/messages.html' %}
+                <center><p>VOUS AVEZ DÉJÀ UN COMPTE SECUSIGNE</p></center>
+                <center><p style="font-size: 2rem;"><a href="{% url 'register' %}"><b>Connectez-vous</b></a></p></center>
+                
+                <div class="form-box">
+                    <div class="tab tab-nav-simple tab-nav-boxed form-tab">                        
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="signin">
+                                <form action="{% url 'login' %}" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group mb-3">
+                                        <input type="email" class="form-control" id="singin-email" name="email" placeholder="Adresse email *" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="singin-password" name="password" placeholder="Mot de passe *"
+                                            required />
+                                    </div>
+                                    <div class="form-footer">
+                                        <div class="form-checkbox">
+                                            <input type="checkbox" class="custom-checkbox" id="signin-remember"
+                                                name="signin-remember" />
+                                            <label class="form-control-label" for="signin-remember">Se souvenir</label>
+                                        </div>
+                                        <a href="{% url 'forgotpassword' %}" class="lost-link">Mot de passe oublié ?</a>
+                                    </div>
+                                    <button class="btn btn-dark btn-block btn-rounded" type="submit">Connexion</button>
+                                </form>
+                                <center>
+                                    <p>VOUS N’AVEZ PAS DE COMPTE SECUSIGNE, 
+                                        VOUS DEVEZ EN CRÉER UN ! (C’EST FACILE)
+                                    </p>
+                                </center>
+                                <a href="{% url 'register' %}">
+                                    <button class="btn btn-default btn-block btn-rounded">
+                                        Créer un compte
+                                    </button>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</main>
+{% endif %}
+{% endblock %}

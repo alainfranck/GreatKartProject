@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+Hi {{ user.first_name }},
+
+Cliquer sur le lien ci-dessous pour confirmer votre enregistrement.
+
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+Ignorer si ceci n'est pas votre adresse mail.
+
+{% endautoescape %}

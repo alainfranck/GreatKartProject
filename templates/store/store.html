@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!--
+<div class="breadcrumb_section bg_gray page-title-mini">
+    <div class="container">
+        <div class="row align-items-center">
+        	<div class="col-md-6">
+                <div class="page-title">
+            		<h1>Shop Left Sidebar</h1>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ol class="breadcrumb justify-content-md-end">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active">Shop Left Sidebar</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<!-- START MAIN CONTENT -->
+<div class="main_content">
+
+<!-- START SECTION SHOP -->
+<div class="section">
+	<div class="container">
+    	<div class="row">
+			<div class="col-lg-12">
+            	<div class="row align-items-center mb-4 pb-1">
+                    <div class="col-12">
+                        <span><b>{{ product_count }}</b> produits trouvés </span>
+                    </div>
+                </div> 
+                <div class="row shop_container">
+                    {% if products %}
+                        {% for product in products %}
+                        <div class="col-md-4 col-6 col-sm-12">
+                            <div class="product">
+                                <div>
+                                    <a href="{{ product.get_url }}">
+                                        <img src="{{ product.images.url }}">
+                                    </a>
+                                </div>
+                                <div class="product_info">
+                                    <center><h4 class="product_title"><a href="{{ product.get_url }}">{{ product.product_name|linebreaks }}</a></h4></center>
+                                    <div class="product_price">
+                                        <center><h3><span class="price">{{ product.price }} FCFA</span></h3></center>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+        		<div class="row">
+                    <div class="col-12">
+                        <nav class="toolbox toolbox-pagination justify-content-center">
+
+                            {% if products.has_other_pages %}
+                            <ul class="pagination">
+                                {% if products.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link"
+                                              href="?page={{products.previous_page_number}}">Précédent</a></li>
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link"
+                                              href="#">Précédent</a></li>
+                                {% endif %}
+                                {% for i in products.paginator.page_range %}
+                                    {% if products.number == i %}
+                                        <li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
+                                    {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ i }}">
+                                            {{ i }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if products.has_next %}
+                                    <li class="page-item"><a class="page-link"
+                                         href="?page={{products.next_page_number}}">Suivant</a></li>
+                                {% else %}
+                                    <li class="page-item disabled"><a class="page-link" href="#">Suivant</a></li>
+                                {% endif %}
+                            </ul>
+                            {% endif %}
+                        </nav>
+                    </div>
+                </div>
+        	</div>
+        </div>
+    </div>
+</div>
+<!-- END SECTION SHOP -->
+</div>
+<!-- END MAIN CONTENT -->
+{% endblock %}
