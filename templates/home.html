@@ -4,17 +4,18 @@
 <main>
     <div id="carousel-home">
         <div class="owl-carousel owl-theme">
-            <div class="owl-slide cover" style="background-image: url({% static 'ldb/img/slides/slide_home_2.jpg);' %}">
+            <div class="owl-slide cover" style="background-image: url('{% static "ldb/img/banner_school.jpg" %}');">
+                url('{% static ".jpg" %}');
                 <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                     <div class="container">
                         <div class="row justify-content-center justify-content-md-end">
                             <div class="col-lg-6 static">
                                 <div class="slide-text text-end white">
-                                    <h2 class="owl-slide-animated owl-slide-title">Attack Air<br>Max 720 Sage Low</h2>
+                                    <h2 class="owl-slide-animated owl-slide-title">vous allez<br>aimer l'école</h2>
                                     <p class="owl-slide-animated owl-slide-subtitle">
-                                        Limited items available at this price
+                                        Lire c'est nourrir l'esprit et l'âme
                                     </p>
-                                    <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="listing-grid-1-full.html" role="button">Shop Now</a></div>
+                                    <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="listing-grid-1-full.html" role="button">J'achète</a></div>
                                 </div>
                             </div>
                         </div>
@@ -66,28 +67,28 @@
     <ul id="banners_grid" class="clearfix">
         <li>
             <a href="#0" class="img_container">
-                <img src="{% static 'ldb/img/banners_cat_placeholder.jpg' %}" data-src="img/banner_1.jpg" alt="" class="lazy">
+                <img src="{% static 'ldb/img/banners_cat_placeholder.jpg' %}" data-src="{% static 'ldb/img/school.jpg' %}" alt="" class="lazy">
                 <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <h3>Men's Collection</h3>
-                    <div><span class="btn_1">Shop Now</span></div>
+                    <h3>Articles scolaires</h3>
+                    <div><span class="btn_1">J'achète</span></div>
                 </div>
             </a>
         </li>
         <li>
             <a href="#0" class="img_container">
-                <img src="img/banners_cat_placeholder.jpg" data-src="img/banner_2.jpg" alt="" class="lazy">
+                <img src="img/banners_cat_placeholder.jpg" data-src="{% static 'ldb/img/books.jpg' %}" alt="" class="lazy">
                 <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <h3>Womens's Collection</h3>
-                    <div><span class="btn_1">Shop Now</span></div>
+                    <h3>Librairie</h3>
+                    <div><span class="btn_1">J'achète</span></div>
                 </div>
             </a>
         </li>
         <li>
             <a href="#0" class="img_container">
-                <img src="img/banners_cat_placeholder.jpg" data-src="img/banner_3.jpg" alt="" class="lazy">
+                <img src="img/banners_cat_placeholder.jpg" data-src="{% static 'ldb/img/papeterie.jpg' %}" alt="" class="lazy">
                 <div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-                    <h3>Kids's Collection</h3>
-                    <div><span class="btn_1">Shop Now</span></div>
+                    <h3>Papeterie</h3>
+                    <div><span class="btn_1">J'achète</span></div>
                 </div>
             </a>
         </li>
