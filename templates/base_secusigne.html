@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Ansonika">
+  <title>ldb | Librairie de Bingerville</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'shopwise/assets/images/favicon.png' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="{% static 'shopwise/assets/css/animate.css' %}">	
+    <!-- Latest Bootstrap min CSS -->
+    <link rel="stylesheet" href="{% static 'shopwise/assets/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"> 
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="{% static 'shopwise/assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'shopwise/assets/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'shopwise/assets/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'shopwise/assets/css/linearicons.css' %}">
+    <link rel="stylesheet" href="{% static 'shopwise/assets/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'shopwise/assets/css/simple-line-icons.css' %}">
+    <!--- owl carousel CSS-->
+    <link rel="stylesheet" href="{% static 'shopwise/assets/owlcarousel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'shopwise/assets/owlcarousel/css/owl.theme.css' %}">
+    <link rel="stylesheet" href="{% static 'shopwise/assets/owlcarousel/css/owl.theme.default.min.css' %}">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="{% static 'shopwise/assets/css/magnific-popup.css' %}">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="{% static 'shopwise/assets/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'shopwise/assets/css/slick-theme.css' %}">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'shopwise/assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'shopwise/assets/css/responsive.css' %}">
+    
+
+    <script>
+      WebFontConfig = {
+          google: { families: [ 'Poppins:300,400,500,600,700,800' ] }
+      };
+      ( function ( d ) {
+          var wf = d.createElement( 'script' ), s = d.scripts[ 0 ];
+          wf.src = "{% static 'riode/js/webfont.js' %}";
+          wf.async = true;
+          s.parentNode.insertBefore( wf, s );
+      } )( document );
+  </script>
+
+	<style>
+	    .responsive {
+          width: 100%;
+          height: auto;
+        }
+        
+        select {
+
+      /* styling */
+      background-color: white;
+      border: thin solid blue;
+      border-radius: 4px;
+      display: inline-block;
+      font: inherit;
+      line-height: 1.5em;
+      padding: 0.5em 3.5em 0.5em 1em;
+    
+      /* reset */
+    
+      margin: 0;      
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    
+    
+    /* arrows */
+    
+    select.classic {
+      background-image:
+        linear-gradient(45deg, transparent 50%, white 50%),
+        linear-gradient(135deg, white 50%, transparent 50%),
+        linear-gradient(to right, black, black);
+      background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        100% 0;
+      background-size:
+        5px 5px,
+        5px 5px,
+        2.5em 2.5em;
+      background-repeat: no-repeat;
+    }
+    
+    select.classic:focus {
+      background-image:
+        linear-gradient(45deg, white 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, white 50%),
+        linear-gradient(to right, black, black);
+      background-position:
+        calc(100% - 15px) 1em,
+        calc(100% - 20px) 1em,
+        100% 0;
+      background-size:
+        5px 5px,
+        5px 5px,
+        2.5em 2.5em;
+      background-repeat: no-repeat;
+      border-color: grey;
+      outline: 0;
+    }
+
+    .geeks {
+      width: 409px;
+      height: 409px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+      
+    .geeks img {
+        width: 100%;
+        transition: 0.5s all ease-in-out;
+    }
+      
+    .geeks:hover img {
+        transform: scale(1.3);
+    }
+	</style>
+    
+</head>
+
+<body>
+  <div id="page">
+  {% include 'includes/navbar.html' %}
+
+      {% block content %}
+      {% endblock %}
+
+  {% include 'includes/footer.html' %}
+  </div>
+  <script src="{% static 'shopwise/assets/js/jquery-3.6.0.min.js' %}"></script> 
+  <!-- popper min js -->
+  <script src="{% static 'shopwise/assets/js/popper.min.js' %}"></script>
+  <!-- Latest compiled and minified Bootstrap --> 
+  <script src="{% static 'shopwise/assets/bootstrap/js/bootstrap.min.js' %}"></script> 
+  <!-- owl-carousel min js  --> 
+  <script src="{% static 'shopwise/assets/owlcarousel/js/owl.carousel.min.js' %}"></script> 
+  <!-- magnific-popup min js  --> 
+  <script src="{% static 'shopwise/assets/js/magnific-popup.min.js' %}"></script> 
+  <!-- waypoints min js  --> 
+  <script src="{% static 'shopwise/assets/js/waypoints.min.js' %}"></script> 
+  <!-- parallax js  --> 
+  <script src="{% static 'shopwise/assets/js/parallax.js' %}"></script> 
+  <!-- countdown js  --> 
+  <script src="{% static 'shopwise/assets/js/jquery.countdown.min.js' %}"></script> 
+  <!-- imagesloaded js --> 
+  <script src="{% static 'shopwise/assets/js/imagesloaded.pkgd.min.js' %}"></script>
+  <!-- isotope min js --> 
+  <script src="{% static 'shopwise/assets/js/isotope.min.js' %}"></script>
+  <!-- jquery.dd.min js -->
+  <script src="{% static 'shopwise/assets/js/jquery.dd.min.js' %}"></script>
+  <!-- slick js -->
+  <script src="{% static 'shopwise/assets/js/slick.min.js' %}"></script>
+  <!-- elevatezoom js -->
+  <script src="{% static 'shopwise/assets/js/jquery.elevatezoom.js' %}"></script>
+  <!-- scripts js --> 
+  <script src="{% static 'shopwise/assets/js/scripts.js' %}"></script>
+  
+
+</body>
+
+</html>
