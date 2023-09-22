@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- START MAIN CONTENT -->
+<div class="main_content">
+
+<!-- START SECTION SHOP -->
+<div class="section">
+	<div class="container">
+		<div class="row">
+            <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+              <div class="product-image">
+                    <div class="product_img_box">
+                        <img id="product_img" src='{{ single_product.images.url }}' data-zoom-image="{{ single_product.images.url }}" alt="product_img1" />
+                        <a href="#" class="product_img_zoom" title="Zoom">
+                        </a>
+                    </div>
+                    
+                    <div id="pr_item_gallery" class="product_gallery_item slick_slider" data-slides-to-show="4" data-slides-to-scroll="1" data-infinite="false">
+                        {% for i in product_gallery %}
+                            <div class="item">
+                                <a href="#" class="product_gallery_item active" data-image="{{ i.image.url }}" data-zoom-image="{{ i.image.url }}">
+                                    <img src="{{ i.image.url }}" alt="product_small_img1" />
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <form action="{% url 'add_cart' single_product.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="pr_detail">
+                        <div class="product_description">
+                            <h2 class="product_title"><a href="#">{{ single_product.product_name }}</a></h2>
+                            
+                            <h5 style="color: red; font-size: 16px;">REFERENCE: {{ single_product.reference }}</h5>
+                                <h5 style="color: #292828; font-size: 20px;"><b>{{ single_product.sous_titre }}</b></h5>
+                            <div class="pr_desc">
+                                <p>{{ single_product.description | safe}}</p>
+                            </div>
+                            <div class="pr_switch_wrap">
+                                {% if single_product.is_variation %}
+                                    <hr>
+                                    {% if single_product.variation_set.details %}
+                                    <div class="row">
+                                        <div class="item-option-select">
+                                            <h3>Faites votre choix</h3>
+                                            <select id="detail" name="detail" class="classic" onchange="getDetail()" required style="border: 1px solid #0000FF">
+                                                {% for i in single_product.variation_set.details %}
+                                                    <option value="{{ i.variation_value }}" {% if i.variation_value == detail_chose %}selected="selected"{% endif %}>
+                                                        {{ i.variation_value | capfirst }}
+                                                    </option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    {% if single_product.variation_set.supports %}
+                                    <div class="row">
+                                        <div class="item-option-select">
+                                            <h3>Faites votre choix</h3>
+                                            <select id="support" name="support" class="classic" onchange="getSupport()" required style="border: 1px solid #0000FF">
+                                                {% for i in single_product.variation_set.supports %}
+                                                    <option value="{{ i.variation_value }}" {% if i.variation_value == support_chose %}selected="selected"{% endif %}>
+                                                        {{ i.variation_value | capfirst }}
+                                                    </option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    {% if single_product.variation_set.dimensions %}
+                                    <div class="row">
+                                        <div class="item-option-select">
+                                            <h3>Faites votre choix</h3>
+                                            <select id="dimension" name="dimension" class="classic" onchange="getDimension()" required style="border: 1px solid #0000FF">
+                                                {% for i in single_product.variation_set.dimensions %}
+                                                    <option value="{{ i.variation_value }}" {% if i.variation_value == dimension_chose %}selected="selected"{% endif %}>
+                                                        {{ i.variation_value | capfirst }}
+                                                    </option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    {% endif %}
+                            </div>
+                        </div>
+                        <input type="text" name="price" value="{{ single_product.price }}" style="display:none">
+						<!--Test price-->
+                        <var class="price h4">{{ single_product.price }} FCFA</var>
+                        <hr />
+                        <div class="cart_extra">
+                            <div class="cart_btn">
+                                <button style="font-size: 1.5rem;" class="btn btn-fill-out btn-addtocart" type="submit"><i class="icon-basket-loaded"></i>Ajouter au panier</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="col-12">
+            	<div class="large_divider clearfix"></div>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="col-12">
+            	<div class="tab-style3">
+					<ul class="nav nav-tabs" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="Description-tab" data-bs-toggle="tab" href="#Description" role="tab" aria-controls="Description" 
+aria-selected="true">Description</a>
+                      	</li>
+                      	<li class="nav-item">
+                        	<a class="nav-link" id="Additional-info-tab" data-bs-toggle="tab" href="#Additional-info" role="tab" aria-controls="Additional-info" 
+aria-selected="false">Avis</a>
+                      	</li>
+                      	<li class="nav-item">
+                        	<a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews" role="tab" aria-controls="Reviews" aria-selected="false">Vidéos</a>
+                      	</li>
+                    </ul>
+                	<div class="tab-content shop_info_tab">
+                      	<div class="tab-pane fade show active" id="Description" role="tabpanel" aria-labelledby="Description-tab">
+                        	<p>{{ single_product.product_name | safe}}</p>
+                      	</div>
+                      	<div class="tab-pane fade" id="Additional-info" role="tabpanel" aria-labelledby="Additional-info-tab">
+                        	
+                      	</div>
+                      	<div class="tab-pane fade" id="Reviews" role="tabpanel" aria-labelledby="Reviews-tab">
+                        	
+                      	</div>
+                	</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="col-12">
+            	<div class="small_divider"></div>
+            	<div class="divider"></div>
+                <div class="medium_divider"></div>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="col-12">
+            	<div class="heading_s1">
+                	<h3>Produits similaires</h3>
+                </div>
+            	<div class="releted_product_slider carousel_slider owl-carousel owl-theme" data-margin="20" data-responsive='{"0":{"items": "1"}, "481":{"items": "2"}, "768":{"items": 
+"3"}, "1199":{"items": "4"}}'>
+                	{% for r in related_products %}
+                        <div class="item">
+                            <div class="product">
+                                    <a href="{{ r.get_url }}">
+                                        <img src="{{ r.images.url }}" alt="product_img1">
+                                    </a>
+                                <div class="product_info">
+                                    <h2 class="product_title"><a href="{{ r.get_url }}">{{ r.product_name }}</a></h2>
+                                    <div class="product_price">
+                                        <span class="price">{{ r.price }} FCFA</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END SECTION SHOP -->
+
+<!-- START SECTION SUBSCRIBE NEWSLETTER -->
+<div class="section bg_default small_pt small_pb">
+	<div class="container">	
+    	<div class="row align-items-center">	
+            <div class="col-md-6">
+                <div class="heading_s1 mb-md-0 heading_light">
+                    <h3>Subscribe Our Newsletter</h3>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="newsletter_form">
+                    <form>
+                        <input type="text" required="" class="form-control rounded-0" placeholder="Enter Email Address">
+                        <button type="submit" class="btn btn-dark rounded-0" name="submit" value="Submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- START SECTION SUBSCRIBE NEWSLETTER -->
+
+</div>
+<!-- END MAIN CONTENT -->
+<script>
+
+	function getDimension(){
+		updatePrice();
+	}
+
+	function getSupport(){
+		updatePrice();
+	}
+
+	function getDetail(){
+		updatePrice();
+	}
+
+	function updatePrice(){
+		var dimensionValue = '';
+		var supportValue = '';
+		var detailValue = '';
+
+		try {
+			var o = document.getElementById("dimension");
+			var dimensionValue = o.value;
+		}catch(err) {
+		  console.log(err.message);
+		}
+
+		try {
+			var i = document.getElementById("support");
+			var supportValue = i.value;
+		}catch(err) {
+		  console.log(err.message);
+		}
+
+		try {
+			var e = document.getElementById("detail");
+			var detailValue = e.value;
+		}catch(err) {
+		  console.log(err.message);
+		}
+
+		//alert('?color=' + colorValue + '&dimension=' + dimensionValue)
+		//window.location = '?color=' + colorValue + '&dimension=' + dimensionValue + '&support=' + supportValue + '&detail=' + detailValue ;
+        window.location = '?dimension=' + dimensionValue + '&support=' + supportValue + '&detail=' + detailValue;
+
+		//window.location = '?dimension=' + dimensionValue + '&support=' + supportValue + '#detail=' + detailValue ;
+	}
+
+</script>
+{% endblock %}
