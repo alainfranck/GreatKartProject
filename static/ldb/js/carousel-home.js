@@ -8,7 +8,7 @@ $("#carousel-home .owl-carousel").on("initialized.owl.carousel", function() {
 const $owlCarousel = $("#carousel-home .owl-carousel").owlCarousel({
   items: 1,
   loop: true,
-  nav: false,
+  nav: true,
   dots:true,
 	responsive:{
         0:{

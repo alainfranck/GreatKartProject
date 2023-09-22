@@ -97,7 +97,7 @@
 	$('.products_carousel').owlCarousel({
 		center: false,
 		items: 2,
-		loop: false,
+		loop: true,
 		margin: 10,
 		dots:false,
 		nav: true,
