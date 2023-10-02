@@ -9,27 +9,33 @@
   <meta name="description" content="">
   <meta name="author" content="Ansonika">
   <title>ldb | Librairie de Bingerville</title>
-  <!-- Favicons-->
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-  <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{% static 'ldb/img/apple-touch-icon-72x72-precomposed.png' %}">
-  <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{% static 'ldb/img/apple-touch-icon-114x114-precomposed.png' %}">
-  <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{% static 'ldb/img/apple-touch-icon-144x144-precomposed.png' %}">
-
-  <!-- GOOGLE WEB FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    <!-- BASE CSS -->
-    <link href="{% static 'ldb/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'ldb/css/style.css' %}" rel="stylesheet">
-
-  <!-- SPECIFIC CSS -->
-    <link href="{% static 'ldb/css/home_1.css' %}" rel="stylesheet">
-
-    <!-- YOUR CUSTOM CSS -->
-    <link href="{% static 'ldb/css/custom.css' %}" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'shopwise/assets/images/favicon.png' %}">
+<!-- Animation CSS -->
+<link rel="stylesheet" href="{% static 'shopwise/assets/css/animate.css' %}">	
+<!-- Latest Bootstrap min CSS -->
+<link rel="stylesheet" href="{% static 'shopwise/assets/bootstrap/css/bootstrap.min.css' %}">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"> 
+<!-- Icon Font CSS -->
+<link rel="stylesheet" href="{% static 'shopwise/assets/css/all.min.css' %}">
+<link rel="stylesheet" href="{% static 'shopwise/assets/css/ionicons.min.css' %}">
+<link rel="stylesheet" href="{% static 'shopwise/assets/css/themify-icons.css' %}">
+<link rel="stylesheet" href="{% static 'shopwise/assets/css/linearicons.css' %}">
+<link rel="stylesheet" href="{% static 'shopwise/assets/css/flaticon.css' %}">
+<link rel="stylesheet" href="{% static 'shopwise/assets/css/simple-line-icons.css' %}">
+<!--- owl carousel CSS-->
+<link rel="stylesheet" href="{% static 'shopwise/assets/owlcarousel/css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'shopwise/assets/owlcarousel/css/owl.theme.css' %}">
+<link rel="stylesheet" href="{% static 'shopwise/assets/owlcarousel/css/owl.theme.default.min.css' %}">
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="{% static 'shopwise/assets/css/magnific-popup.css' %}">
+<!-- Slick CSS -->
+<link rel="stylesheet" href="{% static 'shopwise/assets/css/slick.css' %}">
+<link rel="stylesheet" href="{% static 'shopwise/assets/css/slick-theme.css' %}">
+<!-- Style CSS -->
+<link rel="stylesheet" href="{% static 'shopwise/assets/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'shopwise/assets/css/responsive.css' %}">
     
 
     <script>
@@ -128,22 +134,42 @@
 </head>
 
 <body>
-  <div id="page">
   {% include 'includes/navbar.html' %}
 
       {% block content %}
       {% endblock %}
 
   {% include 'includes/footer.html' %}
-  </div>
-  <div id="toTop"></div><!-- Back to top button -->
-	
-	<!-- COMMON SCRIPTS -->
-    <script src="{% static 'ldb/js/common_scripts.min.js' %}"></script>
-    <script src="{% static 'ldb/js/main.js' %}"></script>
-	
-	<!-- SPECIFIC SCRIPTS -->
-	<script src="{% static 'ldb/js/carousel-home.min.js' %}"></script>  
+  <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a> 
+
+  <!-- Latest jQuery --> 
+  <script src="{% static 'shopwise/assets/js/jquery-3.6.0.min.js' %}"></script> 
+  <!-- popper min js -->
+  <script src="{% static 'shopwise/assets/js/popper.min.js' %}"></script>
+  <!-- Latest compiled and minified Bootstrap --> 
+  <script src="{% static 'shopwise/assets/bootstrap/js/bootstrap.min.js' %}"></script> 
+  <!-- owl-carousel min js  --> 
+  <script src="{% static 'shopwise/assets/owlcarousel/js/owl.carousel.min.js' %}"></script> 
+  <!-- magnific-popup min js  --> 
+  <script src="{% static 'shopwise/assets/js/magnific-popup.min.js' %}"></script> 
+  <!-- waypoints min js  --> 
+  <script src="{% static 'shopwise/assets/js/waypoints.min.js' %}"></script> 
+  <!-- parallax js  --> 
+  <script src="{% static 'shopwise/assets/js/parallax.js' %}"></script> 
+  <!-- countdown js  --> 
+  <script src="{% static 'shopwise/assets/js/jquery.countdown.min.js' %}"></script> 
+  <!-- imagesloaded js --> 
+  <script src="{% static 'shopwise/assets/js/imagesloaded.pkgd.min.js' %}"></script>
+  <!-- isotope min js --> 
+  <script src="{% static 'shopwise/assets/js/isotope.min.js' %}"></script>
+  <!-- jquery.dd.min js -->
+  <script src="{% static 'shopwise/assets/js/jquery.dd.min.js' %}"></script>
+  <!-- slick js -->
+  <script src="{% static 'shopwise/assets/js/slick.min.js' %}"></script>
+  <!-- elevatezoom js -->
+  <script src="{% static 'shopwise/assets/js/jquery.elevatezoom.js' %}"></script>
+  <!-- scripts js --> 
+  <script src="{% static 'shopwise/assets/js/scripts.js' %}"></script>
 
 </body>
 
