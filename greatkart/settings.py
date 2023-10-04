@@ -82,19 +82,19 @@ DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        #'ENGINE': 'django.db.backends.mysql',
-        #'NAME': 'eemqimae_data',
-        #'USER': 'eemqimae_user',
-        #'PASSWORD': 'Manager$2023',
-        #'HOST': '102.219.176.39',
-        #'PORT': '3306',
-
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ldb',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'NAME': 'eemqimae_data',
+        'USER': 'eemqimae_user',
+        'PASSWORD': 'Manager$2023',
+        'HOST': '102.219.176.39',
         'PORT': '3306',
+
+        #'ENGINE': 'django.db.backends.mysql',
+        #'NAME': 'ldb',
+        #'USER': 'root',
+        #'PASSWORD': '',
+        #'HOST': '127.0.0.1',
+        #'PORT': '3306',
         
     }
 }
