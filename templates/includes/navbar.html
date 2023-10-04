@@ -52,7 +52,7 @@
                     <img class="logo_dark" src="{% static 'shopwise/assets/images/logo.jpg' %}" alt="logo">
                 </a>
                 <div class="product_search_form radius_input search_form_btn">
-                    <form>
+                    <form action="{% url 'search' %}" method="GET">
                         <div class="input-group">
                             <input class="form-control" placeholder="Rechercher un article..." required="" type="text">
                             <button type="submit" class="search_btn3">Recherche</button>
@@ -60,27 +60,40 @@
                     </form>
                 </div>
                 <ul class="navbar-nav attr-nav align-items-center">
-                    <li><a href="#" class="nav-link"><i class="linearicons-user"></i></a></li>
-                    <li><a href="#" class="nav-link"><i class="linearicons-heart"></i><span class="wishlist_count">0</span></a></li>
-                    <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-bs-toggle="dropdown"><i class="linearicons-bag2"></i><span class="cart_count">2</span><span class="amount"><span class="currency_symbol"></span>159.00 FCFA</span></a>
-                        <div class="cart_box cart_right dropdown-menu dropdown-menu-right">
-                            <ul class="cart_list">
-                                <li>
-                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                    <a href="#"><img src="assets/images/cart_thamb1.jpg" alt="cart_thumb1">Variable product 001</a>
-                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>78.00</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="item_remove"><i class="ion-close"></i></a>
-                                    <a href="#"><img src="assets/images/cart_thamb2.jpg" alt="cart_thumb2">Ornare sed consequat</a>
-                                    <span class="cart_quantity"> 1 x <span class="cart_amount"> <span class="price_symbole">$</span></span>81.00</span>
-                                </li>
-                            </ul>
-                            <div class="cart_footer">
-                                <p class="cart_total"><strong>Subtotal:</strong> <span class="cart_price"> <span class="price_symbole">$</span></span>159.00</p>
-                                <p class="cart_buttons"><a href="#" class="btn btn-fill-line view-cart">View Cart</a><a href="#" class="btn btn-fill-out checkout">Checkout</a></p>
+                    <li>
+                        {% if user.id is None %}
+                        <a href="{% url 'login' %}">
+                            <i class="linearicons-user"></i> 
+                            &nbsp;&nbsp;Connexion
+                        </a>
+                        &nbsp;&nbsp; | <a href="{% url 'register' %}">Créer un compte</a>
+                        {% else %}
+                        <a href="#" class="help d-lg-show">Bienvenue {{ user.first_name }}</a>
+                        <a href="{% url 'logout' %}">
+                            <i class="linearicons-user"></i>
+                            &nbsp;&nbsp;Déconnexion
+                        </a>
+                        {% endif %}
+                    </li>
+                    <!--
+                    <li><a href="#" class="nav-link"><i class="linearicons-heart"></i><span class="wishlist_count">{{ cart_count }}</span></a></li>
+                    -->
+                    <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="{% url 'cart' %}" data-bs-toggle="dropdown"><i class="linearicons-bag2"></i><span class="cart_count">{{ cart_count }}</span><span class="amount"><span class="currency_symbol"></span>159.00 FCFA</span></a>
+                        {% for cart_item in cart_items %}
+                            <div class="cart_box cart_right dropdown-menu dropdown-menu-right">
+                                <ul class="cart_list">
+                                    <li>
+                                        <a href="{% url 'remove_cart_item' cart_item.product.id cart_item.id %}" onclick="return confirm('Are you sure in delete this item ?')" class="item_remove"><i class="ion-close"></i></a>
+                                        <a href="#"><img src="{{ cart_item.product.images.url }}" alt="cart_thumb1">{{ cart_item.product.product_name }}</a>
+                                        <span class="cart_quantity"> {{ cart_count }} x <span class="cart_amount"> </span>{{ cart_item.product.price }} </span><span class="price_symbole">FCFA</span>
+                                    </li>
+                                </ul>
+                                <div class="cart_footer">
+                                    <p class="cart_total"><strong>Total:</strong> <span class="cart_price"> </span>{{ cart_item.sub_total }} <span class="price_symbole"><span class="price_symbole">FCFA</span></span></p>
+                                    <p class="cart_buttons"><a href="{% url 'cart' %}" class="btn btn-fill-line view-cart">Panier</a><a href="{% url 'checkout' %}" class="btn btn-fill-out checkout">Commander</a></p>
+                                </div>
                             </div>
-                        </div>
+                        {% endfor %}
                     </li>
                 </ul>
             </div>
