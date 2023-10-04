@@ -9,38 +9,15 @@
   <!-- START SECTION SHOP -->
   <div class="section">
     <div class="container">
-          <div class="row">
-              <div class="col-lg-4">
-                <div class="toggle_info">
-                  <center><h2>MON PANIER</h2></center>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="toggle_info">
-                    <center><h2 style="color: red;">FINALISER LA COMMANDE</h2></center>
-                  </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="toggle_info">
-                  <center><h2>PAIEMENT</h2></center>
-                </div>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-12">
-                <div class="medium_divider"></div>
-                <div class="divider center_icon"><i class="linearicons-credit-card"></i></div>
-                <div class="medium_divider"></div>
-              </div>
-          </div>
+          
           <div class="row">
             <div class="col-md-8">
-                <h2 class="title title-simple text-left">RESUME DE VOTRE COMMANDE</h2>
+                <h4 class="title title-simple text-left">RESUME DE VOTRE COMMANDE</h4>
                 <br>
         <form method="post" action="{% url 'payments' %}">
             {% csrf_token %}
             <div class="row">
-                        <h3 style="color: red;"><b>INFORMATIONS DE LIVRAISON</b></h3>
+                        <h4><b>INFORMATIONS DE LIVRAISON</b></h4>
                         <input name="orderID" value="{{order.id}}" style="display: none;">
 
                         <div class="card-body">
@@ -65,7 +42,7 @@
                         <tbody>
                         <tr class="sumnary-shipping shipping-row-last">
                             <td colspan="2">
-                                <h3 style="color: red;"><b>MOYENS DE PAIEMENT</b></h3>
+                                <h4><b>MOYENS DE PAIEMENT</b></h4>
                                 <ul>
                                     <li>
                                         <div class="custom-radio">
@@ -185,7 +162,7 @@
               <div class="col-md-4">
                   <div class="order_review">
                       <div class="heading_s1">
-                          <h3>Votre commande</h3>
+                          <h4>Votre commande</h4>
                       </div>
                       <div class="table-responsive order_table">
                           <table class="table">
@@ -208,14 +185,14 @@
                               </tbody>
                               <tfoot>
                                   <tr>
-                                    <th><h3>TOTAL</h3></th>
+                                    <th><h4>TOTAL</h4></th>
                                     <td></td>
-                                    <td class="product-subtotal"><h3>{{ grand_total }} FCFA</h3></td>
+                                    <td class="product-subtotal"><h4>{{ grand_total }} FCFA</h4></td>
                                 </tr>
                               </tfoot>
                           </table>
                       </div>
-                      <button style="font-size: 1.5rem;" type="submit" class="btn btn-fill-out btn-block" name="submit">Confirmer</button>
+                      <button type="submit" class="btn btn-fill-out btn-block" name="submit">Confirmer</button>
                     </form>
                     </div>
               </div>
