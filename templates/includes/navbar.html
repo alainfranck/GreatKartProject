@@ -77,9 +77,9 @@
                     </li>
                     <!--
                     <li><a href="#" class="nav-link"><i class="linearicons-heart"></i><span class="wishlist_count">{{ cart_count }}</span></a></li>
-                    -->
-                    <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="{% url 'cart' %}" data-bs-toggle="dropdown"><i class="linearicons-bag2"></i><span class="cart_count">{{ cart_count }}</span><span class="amount"><span class="currency_symbol"></span>159.00 FCFA</span></a>
-                        {% for cart_item in cart_items %}
+                    --> {% for cart_item in cart_items %}
+                    <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="{% url 'cart' %}" data-bs-toggle="dropdown"><i class="linearicons-bag2"></i><span class="cart_count">{{ cart_count }}</span><span class="amount"><span class="currency_symbol"></span>{{ cart_item.product.price }} FCFA</span></a>
+                       
                             <div class="cart_box cart_right dropdown-menu dropdown-menu-right">
                                 <ul class="cart_list">
                                     <li>
